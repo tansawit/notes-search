@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  api: # Node.js App
+    container_name: ns-api
+    build: .
+    ports:
+      - "3000:3000" # Expose API port
+      - "9229:9229" # Expose Node process debug port (disable in production)
+    environment: # Set ENV vars
+      #- NODE_ENV=local
+      - ES_HOST=elasticsearch
+      - PORT=3000
+    volumes: # Attach local book data directory
+      - ./notes:/usr/src/app/notes
+
+  frontend: # Nginx Server For Frontend App
+    container_name: ns-frontend
+    image: nginx
+    volumes: # Serve local "public" dir
+      - ./public:/usr/share/nginx/html
+    ports:
+      - "8080:80" # Forward site to localhost:8080
+
+  elasticsearch: # Elasticsearch Instance
+    container_name: ns-search
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.1.1
+    volumes: # Persist ES data in seperate "esdata" volume
+      - esdata:/usr/share/elasticsearch/data
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    ports: # Expose Elasticsearch ports
+      - "9300:9300"
+      - "9200:9200"
+
+volumes: # Define seperate volume for Elasticsearch data
+  esdata:
