@@ -1,4 +1,5 @@
 FROM golang:latest
+FROM node:carbon
 RUN mkdir $GOPATH/src/notesearch/
 WORKDIR $GOPATH/src/notesearch/
 COPY go.mod .
