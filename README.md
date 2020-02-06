@@ -1,6 +1,6 @@
-# ElasticSearch-powered Notes Search App
+# Notes Search
 
-A website to search through my public notes using ElasticSearch. A work in progress.
+A web app to search through my public notes. Built using ElasticSearch, Go, and Docker. A work in progress.
 
 ## Current Progress
 
