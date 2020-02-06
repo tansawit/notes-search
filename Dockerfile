@@ -6,4 +6,4 @@ COPY go.sum .
 RUN go mod download
 COPY . .
 RUN ls
-CMD ["go", "run", "app.go"]
+CMD ["go", "run", "app.go", "connection.go","load.go","search.go"]
