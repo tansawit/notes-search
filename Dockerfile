@@ -1,12 +1,18 @@
 FROM golang:latest
-FROM node:carbon
 RUN mkdir $GOPATH/src/notesearch/
 WORKDIR $GOPATH/src/notesearch/
 COPY go.mod .
 COPY go.sum .
 RUN go mod download
-COPY . .
-CMD ["go", "run", "app.go", "connection.go","load.go","search.go"]
-WORKDIR $GOPATH/src/notesearch/public
-RUN npm install
-RUN npm start
+COPY app.go connection.go load.go search.go go.mod go.sum ./
+RUN go run app.go connection.go load.go search.go &
+
+FROM node:carbon
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY public/ .
+RUN ls
+RUN npm install --silent
+RUN npm install react-scripts -g --silent
+CMD ["npm", "start"]
