@@ -10,13 +10,14 @@ import (
 	"strings"
 )
 
+// ReadAndInsertNotes resets the index, reads files from directory, and add it to the index
 func ReadAndInsertNotes() {
 	//Clear previous ES Index
 	ResetIndex()
 
 	files, err := ioutil.ReadDir("./notes")
 	if err != nil {
-		log.Fatalf("ioutil.ReadDir() ERROR: ", err)
+		log.Fatalf("ioutil.ReadDir() ERROR: %v", err)
 	}
 
 	log.Printf("Found %d Files!", len(files))
@@ -30,6 +31,7 @@ func ReadAndInsertNotes() {
 
 }
 
+// ParseBookFile splits each read file into corresponding title and text parts for indexing
 func ParseBookFile(filePath string) (string, []string) {
 	fileByte, _ := ioutil.ReadFile(filePath)
 	fileContent := string(fileByte)
@@ -47,9 +49,8 @@ func ParseBookFile(filePath string) (string, []string) {
 	return title, text
 }
 
+// InsertNoteData insert the parsed file into ElasticSearch Index
 func InsertNoteData(title string, text []string) {
-	//log.Printf("TITLE: %s", title)
-
 	client, err := GetESClient()
 	ctx := context.Background()
 	if err != nil {
@@ -80,6 +81,7 @@ func deleteEmpty(s []string) []string {
 	return r
 }
 
+// Struct Note defines the corresponding title and text portion of each document
 type Note struct {
 	Title string `json:"title"`
 	Text  string `json:"text"`

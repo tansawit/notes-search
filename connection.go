@@ -2,14 +2,15 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 
 	"github.com/olivere/elastic"
 )
 
 const (
-	Index  = "library"
+	// Index name
+	Index = "library"
+	// ESType defines the type of document in Index
 	ESType = "notes"
 )
 
@@ -33,11 +34,15 @@ const mapping = `
 	}
 }`
 
+// GetESClient returns the ElasticSearch client and the error (if any)
 func GetESClient() (*elastic.Client, error) {
-	client, err := elastic.NewClient(elastic.SetSniff(false), elastic.SetURL("http://127.0.0.1:9200"), elastic.SetHealthcheck(false))
+	client, err := elastic.NewClient(elastic.SetSniff(false), elastic.SetURL("http://elasticsearch:9200"), elastic.SetHealthcheck(false))
 	return client, err
 }
 
+// ResetIndex checks if the library index already exists
+// If yes, it deletes the index
+// In either case, it creates a new empty library index
 func ResetIndex() {
 	// Get ElasticSearch Client
 	client, err := GetESClient()
@@ -68,13 +73,12 @@ func ResetIndex() {
 		}
 		log.Printf("Deleted previous version of Index: %v", Index)
 	}
-	if err != nil {
-		log.Printf("mappingJSON Marhsal ERROR: %s", err)
-	}
+
+	// Create the index
 	createIndex, err := client.CreateIndex(Index).BodyString(mapping).Do(ctx)
 	if err != nil {
 		log.Fatalf("CreateIndex() ERROR: %v", err)
 	} else {
-		fmt.Printf("CreateIndex(): %s", createIndex)
+		log.Printf("CreateIndex(): %v", createIndex)
 	}
 }
