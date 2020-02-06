@@ -1,62 +1,25 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Elastic Library</title>
-    <meta name="description" content="Literary Classic Search Engine.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet"
-        type="text/css" />
-    <link href="https://cdn.muicss.com/mui-0.9.20/css/mui.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,700|Open+Sans" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News App Demo</title>
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 
 <body>
-    <div class="app-container" id="vue-instance">
-        <!-- Search Bar Header -->
-        <div class="mui-panel">
-            <div class="mui-textfield">
-                <input v-model="searchTerm" type="text" v-on:keyup="onSearchInput()">
-                <label>Search</label>
-            </div>
-        </div>
-
-        <!-- Search Metadata Card -->
-        <div class="mui-panel">
-            <div class="mui--text-headline">{{ numHits }} Hits</div>
-            <div class="mui--text-subhead">Displaying Results {{ searchOffset }} - {{ searchOffset + 9 }}</div>
-        </div>
-
-        <!-- Top Pagination Card -->
-        <div class="mui-panel pagination-panel">
-            <button class="mui-btn mui-btn--flat" v-on:click="prevResultsPage()">Prev Page</button>
-            <button class="mui-btn mui-btn--flat" v-on:click="nextResultsPage()">Next Page</button>
-        </div>
-
-        <!-- Search Results Card List -->
-        <div class="search-results" ref="searchResults">
-            <div class="mui-panel" v-for="hit in searchResults" v-on:click="showBookModal(hit)">
-                <div class="mui--text-title" v-html="hit.highlight.text[0]"></div>
-                <div class="mui-divider"></div>
-                <div class="mui--text-subhead">{{ hit._source.title }} - {{ hit._source.author }}</div>
-                <div class="mui--text-body2">Location {{ hit._source.location }}</div>
-            </div>
-        </div>
-
-        <!-- Bottom Pagination Card -->
-        <div class="mui-panel pagination-panel">
-            <button class="mui-btn mui-btn--flat" v-on:click="prevResultsPage()">Prev Page</button>
-            <button class="mui-btn mui-btn--flat" v-on:click="nextResultsPage()">Next Page</button>
-        </div>
-
-        <!-- INSERT BOOK MODAL HERE -->
-    </div>
-    <script src="https://cdn.muicss.com/mui-0.9.28/js/mui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.min.js"></script>
-    <script src="app.js"></script>
+    <main>
+        <header>
+            <a class="logo" href="/">News Demo</a>
+            <form action="/search" method="GET">
+                <input autofocus class="search-input" value="" placeholder="Enter a news topic" type="search"
+                    name="term">
+            </form>
+            <a href="https://github.com/freshman-tech/news" class="button
+      github-button">View on Github</a>
+        </header>
+    </main>
 </body>
 
 </html>
