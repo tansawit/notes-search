@@ -7,7 +7,6 @@ import (
 	"log"
 	"path"
 	"regexp"
-	"strings"
 )
 
 // ReadAndInsertNotes resets the index, reads files from directory, and add it to the index
@@ -32,7 +31,7 @@ func ReadAndInsertNotes() {
 }
 
 // ParseBookFile splits each read file into corresponding title and text parts for indexing
-func ParseBookFile(filePath string) (string, []string) {
+func ParseBookFile(filePath string) (string, string) {
 	fileByte, _ := ioutil.ReadFile(filePath)
 	fileContent := string(fileByte)
 
@@ -43,32 +42,29 @@ func ParseBookFile(filePath string) (string, []string) {
 	bookEndRegEx, _ := regexp.Compile("\\*{3} END OF NOTE \\*{3}")
 	bookStartIndex := bookStartRegEx.FindStringIndex(fileContent)[1]
 	bookEndIndex := bookEndRegEx.FindStringIndex(fileContent)[0]
-	text := strings.Split(fileContent[bookStartIndex:bookEndIndex], "\n")
-	log.Printf("Parsed %d paragraphs", len(text))
-	text = deleteEmpty(text)
+	text := fileContent[bookStartIndex:bookEndIndex]
 	return title, text
 }
 
 // InsertNoteData insert the parsed file into ElasticSearch Index
-func InsertNoteData(title string, text []string) {
+func InsertNoteData(title string, text string) {
 	client, err := GetESClient()
 	ctx := context.Background()
 	if err != nil {
 		log.Printf("GetESClient ERROR: %s", err)
 	}
-	for i := range make([]int, len(text)) {
-		note := Note{Title: title, Text: text[i]}
-		put1, err := client.Index().
-			Index("library").
-			Type("notes").
-			BodyJson(note).
-			Do(ctx)
-		if err != nil {
-			// Handle error
-			panic(err)
-		}
-		fmt.Printf("Indexed note %s to index %s, type %s\n", put1.Id, put1.Index, put1.Type)
+	note := Note{Title: title, Text: text}
+	put1, err := client.Index().
+		Index("library").
+		Type("notes").
+		BodyJson(note).
+		Do(ctx)
+	if err != nil {
+		// Handle error
+		panic(err)
 	}
+	fmt.Printf("Indexed note %s to index %s, type %s\n", put1.Id, put1.Index, put1.Type)
+
 }
 
 func deleteEmpty(s []string) []string {
@@ -81,7 +77,7 @@ func deleteEmpty(s []string) []string {
 	return r
 }
 
-// Struct Note defines the corresponding title and text portion of each document
+// Note struct defines the corresponding title and text portion of each document
 type Note struct {
 	Title string `json:"title"`
 	Text  string `json:"text"`

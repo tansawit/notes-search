@@ -47,26 +47,18 @@ func ResetIndex() {
 	// Get ElasticSearch Client
 	client, err := GetESClient()
 	if err != nil {
-		log.Printf("GetESClient ERROR: %s", err)
+		log.Printf("GetESClient ERROR: %v", err)
 	}
 
 	// Starting with elastic.v5, you must pass a context to execute each service
 	ctx := context.Background()
-
-	// Ping the Elasticsearch server to get e.g. the version number
-	info, code, err := client.Ping("http://127.0.0.1:9200").Do(ctx)
-	if err != nil {
-		// Handle error
-		log.Printf("ElasticSearch Ping ERROR: %v", err)
-	}
-	log.Printf("Elasticsearch returned with code %d and version %s\n", code, info.Version.Number)
 
 	// Check if index already exists and delete if so
 	exists, err := client.IndexExists(Index).Do(ctx)
 	if err != nil {
 		log.Printf("ElasticSearch IndexExists ERROR: %v", err)
 	} else if exists {
-		log.Printf("Index %s already exists", Index)
+		log.Printf("Index %v already exists", Index)
 		_, err = client.DeleteIndex(Index).Do(ctx)
 		if err != nil {
 			log.Fatalf("client.DeleteIndex() ERROR %v", err)

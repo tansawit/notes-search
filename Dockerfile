@@ -5,5 +5,7 @@ COPY go.mod .
 COPY go.sum .
 RUN go mod download
 COPY . .
-RUN ls
 CMD ["go", "run", "app.go", "connection.go","load.go","search.go"]
+WORKDIR $GOPATH/src/notesearch/public
+RUN npm install
+RUN npm start
