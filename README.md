@@ -13,11 +13,11 @@ Those two issues, along with an urge to learn more about ElasticSearch and React
 
 ## Project Structure
 
-### Frontend
+### Frontend (`public/`)
 
 A react app with search functionality provided by ElasticSearch and the backend API server.
 
-### Backend
+### Backend (`server/`)
 
 This folder contains the Go files for serving the API server, preparing the notes, and populating the ElasticSearch index:
 
