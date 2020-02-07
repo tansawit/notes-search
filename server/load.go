@@ -35,8 +35,8 @@ func ParseBookFile(filePath string) (string, string) {
 	fileByte, _ := ioutil.ReadFile(filePath)
 	fileContent := string(fileByte)
 
-	titleRegEx, _ := regexp.Compile("^Title: .*")
-	title := titleRegEx.FindString(fileContent)[7:]
+	titleRegEx, _ := regexp.Compile("^\\A(.*)")
+	title := titleRegEx.FindString(fileContent)
 
 	bookStartRegEx, _ := regexp.Compile("\\*{3} START OF NOTE \\*{3}")
 	bookEndRegEx, _ := regexp.Compile("\\*{3} END OF NOTE \\*{3}")
@@ -61,7 +61,7 @@ func InsertNoteData(title string, text string) {
 		Do(ctx)
 	if err != nil {
 		// Handle error
-		panic(err)
+		log.Printf("Indexing ERROR (%v) for file title %s", err, title)
 	}
 	fmt.Printf("Indexed note %s to index %s, type %s\n", put1.Id, put1.Index, put1.Type)
 
