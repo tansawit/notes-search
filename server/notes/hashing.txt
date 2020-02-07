@@ -1,0 +1,62 @@
+Hashing
+
+*** START OF NOTE ***
+Hash Functions
+
+Input: Arbitrary-Length Data
+
+Output: Fixed-size digest (n bits)
+
+Properties
+
+-   No keys
+-   Fixed Function
+
+Examples: SHA-256, SHA-512, SHA-3
+
+Characteristics of a Good Hash Function
+
+Collision Resistance
+
+-   Hard to find pair of input x, x′ such that H(x) = H(x’)
+
+Preimage Resistance
+
+-   Given y, hard to find x′ such that H(x′) = y
+
+Second Preimage Resistance
+
+-   Given x, hard to find an x′ such that H(x) = H(x′)
+
+SHA-256
+
+Basics
+
+Input: Arbitrary Length Data
+
+Output: 256-bit digest
+
+Built with “compression function” h using Merkle–Damgård construction
+
+out
+
+Algorithm
+
+1.  Pad input into multiple of 512 bits using a fixed algorithm
+2.  Split into 512-bit blocks
+3.   = constant initialization vector,
+4.  Return
+
+Other Hash Functions
+
+MD5
+
+-   Once ubiquitous
+-   Broken in 2004
+-   Now easy to find collisions
+
+SHA-1
+
+-   Fairly widely used
+-   Started to be unsupported in HTTPS in January 2016
+*** END OF NOTE ***

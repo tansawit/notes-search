@@ -1,0 +1,128 @@
+Secure Channel
+
+*** START OF NOTE ***
+A secure channel is a way of transferring data that is resistant to
+overhearing and tampering
+
+A secure channel has the following properties:
+
+Confidentiality
+
+Confidentiality means that contents of a message is kept secret from any
+eavesdropper.
+
+Nomenclature:
+
+= plaintext
+
+= ciphertext
+
+= secret key
+
+= encryption function
+
+= decryption function
+
+Techniques
+
+-   [Caesar Ciphers]({{<relref
+    “docs/topic/../../../cryptography/ciphers/#caesar-ciphers”>}})
+-   [Vigenere Ciphers]({{<relref
+    “docs/topic/../../../cryptography/ciphers/#vigenere-ciphers”>}})
+-   [One-time Pads]({{<relref
+    “docs/topic/../../../cryptography/ciphers/#one-time-pad”>}})
+
+Integrity
+
+Message integrity means that an attacker cannot modify messages without
+being detected.
+
+For example, is Alice is sending a message to Bob, we want to ensure
+that Bob receives what Alice actually wants to send
+
+Threat Model
+
+Mallory, the attacker, can see, modify, and forge messages
+(i.e. Man-in-the-Middle Attacks)
+
+Mallory wants to trick Bob into accepting a message Alice didn’t send
+
+Defense
+
+Alice computes
+
+For example, message m = “Attack at dawn”, f(m) = 7489890283840
+
+Bob verifies that , and accepts the message if and only if this is true.
+
+We want to be easily computable by Alice and Bob, but not easily
+computable by mallory
+
+We lose if Mallory can learn for any
+
+Random Functions
+
+Input: Fixed size (message size)
+
+Output: Fixed size (e.g. 256 bits)
+
+Secure, but impractical
+
+Pseudo-random Functions (PRF)
+
+A function that ‘looks random’, but remains practical.
+
+Building a PRF
+
+Kerchoff’s Principle: A cryptosystem should be secure even if everything
+about the system, except the key, is public knowledge.
+
+Start with a big family of functions … all known to Mallory
+
+Let , our verifier function, be where is a secret index/key only known
+to Alice and Bob.
+
+is bits, chosen randomly.
+
+Formal Definition of a PRF
+
+1.  Flip a coin secretly to get bit
+2.  If , let be a random function. If , let , where is a randomly chosen
+    secret
+3.  Mallory chooses : we announce . Repeat as often as Mallory likes
+4.  Mallory guesses quickly
+
+Definition: We say that is a secure PRF if Mallory can’t select any
+better than random guessing.
+
+Note: We do not know if a true pseudo-random function exists. Currently
+mostly using functions where we haven’t spotted a problem yet
+(e.g. HMAC-SHA256)
+
+Pseudo-random Generators (PRG)
+
+Takes small seed that is really random
+
+Generates a sequence of number that is “as good as random”
+
+A PRG is secure if it’s indistinguishable from random
+
+1.  We flip a coin to get a bit
+2.  if , let be a truly random stream
+3.  if late be for a random secret
+4.  Mallory can see as much of the output of as they want
+5.  Mallory wins if guesses correctly
+
+We consider to be a secure PRG if there is no winning strategy for
+Mallory
+
+True Randomness
+
+Where do we get true randomness?
+
+Modern OSes typically collect randomness, provide API to get it. For
+example, on Linux, /dev/random is a device that gives random bits and
+blocks.
+
+Authenticity
+*** END OF NOTE ***

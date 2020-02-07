@@ -1,0 +1,15 @@
+Date and Time
+
+*** START OF NOTE ***
+
+Basics
+
+Current Time since epoch
+
+    import datetime as dt
+    import time as tm
+
+    tm.time()
+
+    dt.datetime.fromtimestamp(tm.time())
+*** END OF NOTE ***

@@ -1,0 +1,272 @@
+Nine Business Models and the Metrics Investors Want
+
+*** START OF NOTE ***
+Notes from Anu Hariharan’s talk as part of Y Combinator’s Startup School
+2019 Series.
+
+Original Video: here
+
+Thinking about which metrics to track
+
+Find out which business model you fit in, not your industry. (How you
+plan to charge your users)
+
+Nine ‘verticals’:
+
+{{}}
+
+-   Enterprise
+-   Subscription
+-   E-Commerce
+-   SaaS
+-   Transactional
+
+<—>
+
+-   Advertising
+-   Usage-based
+-   Marketplace
+-   Hardware
+
+{{}}
+
+Common Mistakes
+
+  Mistakes                    Solution
+  --------------------------- --------------------------------
+  Cumulative Charts           Monthly Data
+  Not labelling Y-Axis        Label with the right detail
+  Changing the Y-Axis Scale   X and Y axes intersect at zero
+  Showing only % gains        Show absolute number and %
+
+Industries
+
+Enterprise
+
+Company that sells services or software to other businesses on a
+single-license basis. (fixed terms, designated contract values, renewal
+at end of term)
+
+Examples:
+
+-   Docker
+-   Cloudera
+-   FireEye
+
+  Metrics           Note
+  ----------------- ----------------------------------------------------
+  Bookings          Sum of value of all customer contract
+  Total Customers   Total number of unique customer contracted (today)
+  Revenue           Recognized when service is provided
+
+SaaS
+
+A software-as-a-service company sells subscription-based licenses for a
+cloud-hosted software solution.
+
+Examples
+
+-   IronClad
+-   Segment
+-   Sendbird
+
+  -----------------------------------------------------------------------
+  Metrics     Note
+  ----------- -----------------------------------------------------------
+  MRR         Revenue rendered in a given month (does not recognize
+  (Monthly    non-recurring fees)
+  Recurring   
+  Revenue)    
+
+  ARR (Annual Revenue components that are recurring on an annual basis
+  Recurring   
+  Revenue)    
+
+  Gross MRR   MRR lost in a given month / MRR at the beginning of the
+  Churn       month
+
+  Paid CAC    Cost per customer acquired through paid marketing channels
+              (total sales and marketing spend in given month / total
+              customers acquired via paid channels in a given month)
+  -----------------------------------------------------------------------
+
+Subscription
+
+A Company that sells a product or service on a recurring basis
+
+Examples
+
+-   The Athletic
+-   Dollar Shave Club
+-   Blue Apron
+
+  -----------------------------------------------------------------------
+  Metrics       Note
+  ------------- ---------------------------------------------------------
+  MRR (Monthly  Revenue rendered in a given month (does not recognize
+  Recurring     non-recurring fees)
+  Revenue)      
+
+  MRR CMGR      Implied compounded monthly MRR growth rate between two
+  (Compound     disparate months [CMGR=(last month MRR/first month
+  Monthly       MRR)^(1/num_months)-1]
+  Growth Rate)  
+
+  Gross User    Total customer lost in a given period/prior period total
+  Churn         customers
+
+  Paid CAC      Cost per customer acquired through paid marketing
+                channels (total sales and marketing spend in given month
+                / total customers acquired via paid channels in a given
+                month)
+  -----------------------------------------------------------------------
+
+Transactional
+
+A company that enables a financial transaction on behalf of a customer
+and collects a fee.
+
+Examples
+
+-   Stripe
+-   PayPal
+-   Coinbase
+-   Brex
+
+  -----------------------------------------------------------------------------
+  Metrics         Note
+  --------------- -------------------------------------------------------------
+  Gross           Total sales or payment dollar volume transacted in a given
+  Transactional   period
+  Volume          
+
+  Net Revenue     The portion of GTV that the company recognizes as revenue for
+                  service rendered
+
+  User Retention  Percent of customers who go on to make at least one purchase
+                  in month 2 (cohort metric => recalculated to include each new
+                  cohort acquired)
+
+  Paid CAC        Cost per customer acquired through paid marketing channels
+                  (total sales and marketing spend in given month / total
+                  customers acquired via paid channels in a given month)
+  -----------------------------------------------------------------------------
+
+Marketplace
+
+A company that acts as an intermediary in the sales of good or service
+between sellers and buyers
+
+Examples
+
+-   AirBnB
+-   eBay
+
+  -----------------------------------------------------------------------
+  Metrics         Note
+  --------------- -------------------------------------------------------
+  GMV (Gross      Total sales dollar volume of merchandise transacted in
+  Merchandise     a given period
+  Value)          
+
+  Net Revenue     The potion of GMV that the company recognizes as
+                  revenue for service rendered
+
+  Net Revenue     Implied compounded monthly net revenue growth rate
+  CMGR (Compound  between two disparate month [CMGR=(last month MRR/first
+  Monthly Growth  month MRR)^(1/num_months)-1]
+  Rate)           
+
+  User Retention  Percent of customers who go on to make at least one
+                  purchase in month 2 (cohort metric => recalculated to
+                  include each new cohort acquired)
+
+  Paid CAC        Cost per customer acquired through paid marketing
+                  channels (total sales and marketing spend in given
+                  month / total customers acquired via paid channels in a
+                  given month)
+  -----------------------------------------------------------------------
+
+E-Commerce
+
+A company that sells physical good online. Generally these companies
+manufacture and inventory those goods.
+
+Examples
+
+-   Warby Parker
+-   Bonobos
+-   Memebox
+
+  ---------------------------------------------------------------------------
+  Metrics   Note
+  --------- -----------------------------------------------------------------
+  Monthly   Total Revenue in a given month
+  Revenue   
+
+  Revenue   Implied compounded monthly revenue growth rate between two
+  CMGR      disparate month [CMGR=(last month MRR/first month
+            MRR)^(1/num_months)-1]
+
+  Gross     Gross profit in a given month / total revenue in the same month
+  Margin    (gross profit = total revenue less cost of sales and COGS
+            (cost-of-goods-sold))
+
+  Paid CAC  Cost per customer acquired through paid marketing channels (total
+            sales and marketing spend in given month / total customers
+            acquired via paid channels in a given month)
+  ---------------------------------------------------------------------------
+
+Advertising
+
+A company that offers a free service to customers and derives revenue
+predominantly/entirely from advertisers.
+
+Examples:
+
+-   Snapchat
+-   Twitter
+-   Reddit
+
+  -----------------------------------------------------------------------
+  Metrics        Note
+  -------------- --------------------------------------------------------
+  DAU (Daily     Total number of unique users active in a 24-hour day,
+  Active Users)  averaged over a given period of time
+
+  MAU (Monthly   Total number of unique users active at least once in
+  Active Users)  last 28 days
+
+  Percent        Total monthly active users with a registered account /
+  Logged-In      total unique visitors over the same 28-day window
+  -----------------------------------------------------------------------
+
+Hardware
+
+A company that sells physical devices to consumers or businesses
+
+Examples:
+
+-   FitBit
+-   GoPro
+-   Xiaomi
+
+  ---------------------------------------------------------------------------
+  Metrics   Note
+  --------- -----------------------------------------------------------------
+  Monthly   Total Revenue in a given month
+  Revenue   
+
+  Revenue   Implied compounded monthly revenue growth rate between two
+  CMGR      disparate month [CMGR=(last month MRR/first month
+            MRR)^(1/num_months)-1]
+
+  Gross     Gross profit in a given month / total revenue in the same month
+  Margin    (gross profit = total revenue less cost of sales and COGS
+            (cost-of-goods-sold))
+
+  Paid CAC  Cost per customer acquired through paid marketing channels (total
+            sales and marketing spend in given month / total customers
+            acquired via paid channels in a given month)
+  ---------------------------------------------------------------------------
+*** END OF NOTE ***
