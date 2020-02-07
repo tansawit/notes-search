@@ -17,7 +17,7 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("<h1>Hello World. This is Backend!</h1>"))
 	})
-	http.HandleFunc("/search", SearchHandler)
+	http.HandleFunc("/search", searchHandler)
 	log.Println("Go Listening on port", PORT)
 
 	http.ListenAndServe(":"+PORT, nil)
@@ -41,8 +41,9 @@ type Shards struct {
 
 // Source holds the title and text of each ElasticSearch query match
 type Source struct {
-	Title string `json:"title"`
-	Text  string `json:"text"`
+	Title     string `json:"title"`
+	Paragraph int    `json:paragraph`
+	Text      string `json:"text"`
 }
 
 // Hits store the information for each result hit from ElasticSearch
