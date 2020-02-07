@@ -1,17 +1,18 @@
 package main
 
 import (
-	"bytes"
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"net/url"
+	"strings"
 
 	"github.com/elastic/go-elasticsearch/v8"
 )
 
-func SearchHandler(w http.ResponseWriter, r *http.Request) {
+func searchHandler(w http.ResponseWriter, r *http.Request) {
 	u, err := url.Parse(r.URL.String())
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -48,23 +49,27 @@ func esSearchContent(searchKey string) interface{} {
 	}
 
 	var result map[string]interface{}
-	var buf bytes.Buffer
-	query := map[string]interface{}{
-		"query": map[string]interface{}{
-			"match": map[string]interface{}{
-				"text": searchKey,
-			},
-		},
-	}
-	if err := json.NewEncoder(&buf).Encode(query); err != nil {
-		log.Fatalf("Error encoding query: %s", err)
-	}
+	query := fmt.Sprintf(`{
+		  "query": {
+		    "multi_match": {
+		      "query": "%s",
+		      "type": "cross_fields",
+		      "fields": [
+		        "title",
+		        "text"
+		      ],
+			  "operator": "and",
+			  "zero_terms_query": "all"
+		    }
+		  }
+		}`, searchKey)
+	queryString := strings.NewReader(query)
 
 	// Perform the search request.
 	res, err := es.Search(
 		es.Search.WithContext(context.Background()),
 		es.Search.WithIndex(Index),
-		es.Search.WithBody(&buf),
+		es.Search.WithBody(queryString),
 		es.Search.WithTrackTotalHits(true),
 		es.Search.WithPretty(),
 	)
