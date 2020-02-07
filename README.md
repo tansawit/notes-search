@@ -1,6 +1,6 @@
 # Notes Search
 
-A web app to search through my public notes. Built using ElasticSearch, Go, and Docker. A work in progress.
+A web app to search through my public notes. Built using ElasticSearch, Go, React and Docker. A work in progress.
 
 ## Current Progress
 
@@ -15,7 +15,7 @@ Content
 
 Frontend
 
-- Integrate with a framework (Vue?/React?/More Go????)
+- Fledge out front-end functionality
 - Input validation/sanitization
 
 Backend

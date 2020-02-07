@@ -12,10 +12,12 @@ func main() {
 		PORT = "3000"
 	}
 
+	ReadAndInsertNotes()
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("<h1>Hello World. This is Backend!</h1>"))
 	})
-	http.HandleFunc("/search", searchHandler)
+	http.HandleFunc("/search", SearchHandler)
 	log.Println("Go Listening on port", PORT)
 
 	http.ListenAndServe(":"+PORT, nil)
