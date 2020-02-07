@@ -1,4 +1,3 @@
-
 import ReactDOM from "react-dom";
 import React from "react";
 import axios from "axios";
@@ -6,6 +5,12 @@ import { Card, Header, Form, Input, Icon } from "semantic-ui-react";
 
 let endpoint = "http://localhost:3000/";
 
+const style = (
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
+    />
+);
 class ESSearch extends React.Component {
     constructor(props) {
         super(props);
@@ -24,7 +29,6 @@ class ESSearch extends React.Component {
         clearInterval(this.interval);
     }
     getQueryResults() {
-
         let { query } = this.state;
         if (query) {
             axios.get(endpoint + "search?term=" + query).then(res => {
@@ -75,8 +79,18 @@ class ESSearch extends React.Component {
                 <div className="hitCount">
                     <h2>{this.state.hits} Hits</h2>
                 </div>
-                <div className="results">
-                    {this.state.results.map(result => <h3>{result["_source"]["title"]}</h3>)}
+                <div class="ui four doubling stackable cards">
+                    {this.state.results.map(result => (
+                        // <h3>{result["_source"]["title"]}</h3>
+                        <Card>
+                            <Card.Header>
+                                {result["_source"]["title"]}
+                            </Card.Header>
+                            <Card.Content>
+                                {result["_source"]["text"]}
+                            </Card.Content>
+                        </Card>
+                    ))}
                 </div>
                 {/* <div className="row"> */}
                 {/*     <Card.Group>{this.state.results}</Card.Group> */}
@@ -88,4 +102,10 @@ class ESSearch extends React.Component {
 
 // ========================================
 
-ReactDOM.render(<ESSearch />, document.getElementById("root"));
+ReactDOM.render(
+    <div>
+        {style}
+        <ESSearch />
+    </div>,
+    document.getElementById("root")
+);
