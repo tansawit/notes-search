@@ -37,7 +37,7 @@ services:
     # volumes: # Serve local "public" dir
     #   - ./public:/usr/share/nginx/html
     ports:
-      - "8080:80" # Forward site to localhost:8080
+      - "80:80" # Forward site to localhost:8080
 
 volumes: # Define seperate volume for Elasticsearch data
   esdata:
