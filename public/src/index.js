@@ -3,7 +3,8 @@ import React from "react";
 import axios from "axios";
 import { Card, Header, Form, Input, Icon } from "semantic-ui-react";
 
-let endpoint = "http://localhost:3000/";
+let dev_endpoint = "http://localhost:3000/"
+let prod_endpoint = "http://35.198.243.43:3000/";
 
 const style = (
     <link
@@ -31,7 +32,7 @@ class ESSearch extends React.Component {
     getQueryResults() {
         let { query } = this.state;
         if (query) {
-            axios.get(endpoint + "search?term=" + query).then(res => {
+            axios.get(prod_endpoint+ "search?term=" + query).then(res => {
                 // console.log(res["data"]["hits"]["hits"]);
                 if (res.data) {
                     this.setState({
