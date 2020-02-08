@@ -2,6 +2,8 @@
 
 A web app to search through my public notes. Built using [ElasticSearch](https://www.elastic.co/), [Go](https://golang.org/), [React](https://reactjs.org/) and [Docker](http://docker.com/). A work in progress.
 
+The app is hosted at [search.tansawit.me](http://search.tansawit.me)
+
 ## Introduction
 
 Previously, I store all my notes on a Hugo-based site hosted at [notes.tansawit.me](https://notes.tansawit.me). However, after a few month of using that solution, I ran into two problems.
@@ -41,13 +43,9 @@ Navigate to `localhost:8080` on your browser. You can now search for terms acros
 
 ## TODO
 
-Content
-
-- Migrate all notes from current directory/website to here
-
 Frontend
 
-- Show highlights instead of full note
+- Clicking on Card shows full note
 - Fledge out front-end functionality
 - Input validation/sanitization
 
@@ -55,6 +53,14 @@ Backend
 
 - Add highlight to search result returns
 - Switch over to fully using official ElasticSearch Go Client
+
+Deployment
+
+- Add SSL Certificate
+
+Content
+
+- Migrate all notes from current directory/website to here
 
 Misc.
 
