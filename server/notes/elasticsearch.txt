@@ -1,7 +1,5 @@
 Elasticsearch
 
-*** START OF NOTE ***
-
 Elasticsearch is a distributed, JSON-based, and RESTful search and
 analytics engine.
 
@@ -66,4 +64,3 @@ Use Cases
 References
 
 -   Elastic Site
-*** END OF NOTE ***

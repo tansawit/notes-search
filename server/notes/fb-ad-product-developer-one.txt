@@ -1,7 +1,5 @@
 Facebook Certified Ad Product Developer I
 
-*** START OF NOTE ***
-
 Facebook Pixel
 
 The Facebook pixel is a tool that helps you understand a consumer’s
@@ -136,4 +134,3 @@ agency or marketing partners to help manage your business
     ad accounts and maintain ownership of your assets
 -   Track your ads on Facebook and Instagram more efficiently with
     overviews and detailed views of spending/impression
-*** END OF NOTE ***

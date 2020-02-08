@@ -1,7 +1,5 @@
 NumPy
 
-*** START OF NOTE ***
-
 Arrays
 
 Creating Arrays
@@ -76,4 +74,3 @@ Index of Maximum/Minimum
 
     a.argmax()
     a.argmin()
-*** END OF NOTE ***

@@ -1,7 +1,5 @@
 Analytics for Startups
 
-*** START OF NOTE ***
-
 Notes from Ilya Volodarsky’s talk as part of Y Combinator’s Startup
 School 2019 Series.
 
@@ -152,4 +150,3 @@ Common Mistake: Trying to pick the right tool
 The Startup Stack
 
 [The Startup Stack]
-*** END OF NOTE ***

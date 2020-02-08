@@ -1,6 +1,5 @@
 Secure Channel
 
-*** START OF NOTE ***
 A secure channel is a way of transferring data that is resistant to
 overhearing and tampering
 
@@ -125,4 +124,3 @@ example, on Linux, /dev/random is a device that gives random bits and
 blocks.
 
 Authenticity
-*** END OF NOTE ***

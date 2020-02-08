@@ -1,6 +1,5 @@
 Hashing
 
-*** START OF NOTE ***
 Hash Functions
 
 Input: Arbitrary-Length Data
@@ -59,4 +58,3 @@ SHA-1
 
 -   Fairly widely used
 -   Started to be unsupported in HTTPS in January 2016
-*** END OF NOTE ***

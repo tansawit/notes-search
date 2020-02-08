@@ -1,8 +1,6 @@
 How to Talk to Users
- 
-*** START OF NOTE ***
 
-Customers don’t buy the what. They buy the why - (Eric Migicovsky)
+  Customers don’t buy the what. They buy the why - (Eric Migicovsky)
 
 Notes from Eric Migicovsky’s talk as part of Y Combinator’s Startup
 School 2019 Series.
@@ -101,4 +99,3 @@ Ideal intersection for first customers
             -   User interviews are not for pitching your
                 ideas/features, they are for learning about your users’
                 problems
-*** END OF NOTE ***

@@ -51,16 +51,20 @@ func esSearchContent(searchKey string) interface{} {
 	var result map[string]interface{}
 	query := fmt.Sprintf(`{
 		  "query": {
-		    "multi_match": {
-		      "query": "%s",
-		      "type": "cross_fields",
-		      "fields": [
-		        "title",
-		        "text"
-		      ],
-			  "operator": "and",
-			  "zero_terms_query": "all"
+			"match": {
+		      "text": {
+		        "query": "%s",
+		        "operator": "and",
+		        "zero_terms_query": "all"
+		      }
 		    }
+		  },
+		  "highlight": {
+			"fields": {
+				"text": {}
+			},
+			"pre_tags": ["<b>"],
+			"post_tags": ["</b>"]
 		  }
 		}`, searchKey)
 	queryString := strings.NewReader(query)

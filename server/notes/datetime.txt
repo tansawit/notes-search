@@ -1,7 +1,5 @@
 Date and Time
 
-*** START OF NOTE ***
-
 Basics
 
 Current Time since epoch
@@ -12,4 +10,3 @@ Current Time since epoch
     tm.time()
 
     dt.datetime.fromtimestamp(tm.time())
-*** END OF NOTE ***

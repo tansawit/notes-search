@@ -1,7 +1,5 @@
 Google’s Generative Advesarial Networks Course
 
-*** START OF NOTE ***
-
 Generative Models
 
 “Generative” describes a class of statistical models. Compared to
@@ -96,4 +94,3 @@ Procedure:
 -   Discriminator classifies both real and fake data from the generator
 -   Discriminator loss penalizes the it for misclassification
 -   Discriminator updates its weight through backpropagation
-*** END OF NOTE ***

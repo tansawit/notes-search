@@ -1,7 +1,5 @@
 Gestalt Principle
 
-*** START OF NOTE ***
-
 Introduction
 
 The Gestalt Principle attempts to describe how people perceive visual
@@ -153,4 +151,3 @@ It can help with grouping relevant information and linking actions with
 results. The disruption of a synchronized movement can grab users’
 attention and direct it to a specific element or feature. It can also,
 establish relationships between different groups or states.
-*** END OF NOTE ***

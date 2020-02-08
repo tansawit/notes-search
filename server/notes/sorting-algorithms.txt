@@ -1,6 +1,5 @@
 Sorting Algorithms
 
-*** START OF NOTE ***
 Selection Sort
 
 Type: in-place
@@ -374,4 +373,3 @@ Heapify:
 createAndBuildHeap: is
 
 Overall:
-*** END OF NOTE ***

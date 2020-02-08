@@ -1,6 +1,5 @@
 Project Silica
 
-*** START OF NOTE ***
 Project Info
 
 Introduction
@@ -68,4 +67,3 @@ References
     Zettabyte Era (Microsoft Research Faculty Summit 2018)
 -   Project Silica - Storing Data in Glass (Microsoft Research YouTube
     Channel)
-*** END OF NOTE ***

@@ -1,7 +1,5 @@
 How to Plan an MVP
 
-*** START OF NOTE ***
-
   The thing that gets people screwed up with their MVP is that they have
   a vision that’s big, but they’re not willing to have an MVP that’s
   small
@@ -59,4 +57,3 @@ Hacks for building an MVP quickly
 You will recognize that you have product market fit once you spend your
 time maintaining your app online instead of figuring out new features
 and developing them.
-*** END OF NOTE ***

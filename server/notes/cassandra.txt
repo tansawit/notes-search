@@ -1,7 +1,5 @@
 Apache Cassandra
 
-*** START OF NOTE ***
-
 Apache Cassandra is is a highly scalable, high-performance distributed
 database created by Facebook. It is designed to handle large amounts of
 data across multiple commodity server, allowing for high availability
@@ -91,4 +89,3 @@ checks the bloom filter to find the appropriate SSTable that holds the
 required data.
 
 Data Model
-*** END OF NOTE ***

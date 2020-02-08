@@ -1,7 +1,5 @@
 Net Promoter Score
 
-*** START OF NOTE ***
-
 A management tool used to gauge the loyalty of a firm’s customer
 relationships, an alternative to the traditional customer satisfaction.
 
@@ -67,4 +65,3 @@ Fails to predict loyalty behaviors
 -   Use of multiple indicators instead of a single predictor model
     performs significantly better in predicting customer recommendations
     and retention
-*** END OF NOTE ***

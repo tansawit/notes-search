@@ -1,6 +1,5 @@
 Nine Business Models and the Metrics Investors Want
 
-*** START OF NOTE ***
 Notes from Anu Hariharan’s talk as part of Y Combinator’s Startup School
 2019 Series.
 
@@ -269,4 +268,3 @@ Examples:
             sales and marketing spend in given month / total customers
             acquired via paid channels in a given month)
   ---------------------------------------------------------------------------
-*** END OF NOTE ***

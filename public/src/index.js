@@ -8,7 +8,7 @@ let endpoint = "http://localhost:3000/";
 const style = (
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
+        href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
     />
 );
 class ESSearch extends React.Component {
@@ -47,9 +47,6 @@ class ESSearch extends React.Component {
             });
         }
     }
-    onSubmit = () => {
-        this.getQueryResults();
-    };
     onChange = event => {
         this.setState({
             [event.target.name]: event.target.value
@@ -60,41 +57,45 @@ class ESSearch extends React.Component {
             <div>
                 <div className="row">
                     <Header className="header" as="h1">
-                        SEARCH NOTES
+                        Search My Notes
                     </Header>
                 </div>
                 <div className="row">
-                    <Form onSubmit={this.onSubmit}>
+                    <Form>
                         <Input
                             type="text"
                             name="query"
                             value={this.state.query}
                             onChange={this.onChange}
+                            icon="search"
                             fluid
                             placeholder="Enter Query"
                         />
-                        {/* <Button >Create Task</Button> */}
                     </Form>
                 </div>
                 <div className="hitCount">
-                    <h2>{this.state.hits} Hits</h2>
+                    <Header className="header" as="h2">
+                        {this.state.hits} Hits
+                    </Header>
                 </div>
                 <div class="ui four doubling stackable cards">
                     {this.state.results.map(result => (
-                        // <h3>{result["_source"]["title"]}</h3>
                         <Card>
                             <Card.Header>
-                                {result["_source"]["title"]}
+                                <strong>{result._source.title}</strong>
                             </Card.Header>
                             <Card.Content>
-                                {result["_source"]["text"]}
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: result.highlight.text.join(
+                                            "<br><br>"
+                                        )
+                                    }}
+                                />
                             </Card.Content>
                         </Card>
                     ))}
                 </div>
-                {/* <div className="row"> */}
-                {/*     <Card.Group>{this.state.results}</Card.Group> */}
-                {/* </div> */}
             </div>
         );
     }

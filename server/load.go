@@ -38,12 +38,7 @@ func ParseBookFile(filePath string) (string, string) {
 	titleRegEx, _ := regexp.Compile("^\\A(.*)")
 	title := titleRegEx.FindString(fileContent)
 
-	bookStartRegEx, _ := regexp.Compile("\\*{3} START OF NOTE \\*{3}")
-	bookEndRegEx, _ := regexp.Compile("\\*{3} END OF NOTE \\*{3}")
-	bookStartIndex := bookStartRegEx.FindStringIndex(fileContent)[1]
-	bookEndIndex := bookEndRegEx.FindStringIndex(fileContent)[0]
-	text := fileContent[bookStartIndex:bookEndIndex]
-	return title, text
+	return title, fileContent
 }
 
 // InsertNoteData insert the parsed file into ElasticSearch Index

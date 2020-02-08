@@ -1,8 +1,5 @@
 How to Evaluate Your Startup Ideas
 
-*** START OF NOTE ***
-
-
   Before anyone can remember, they have to understand - (Kevin Hale)
 
 Notes from Kevin Hale’s talk as part of Y Combinator’s Startup School
@@ -157,4 +154,3 @@ Memorable Quotes
 -   Marketing and advertising are taxes companies pay for not making
     something remarkable - (Kevin Hale)
 -   Before anyone can remember, they have to understand - (Kevin Hale)
-*** END OF NOTE ***

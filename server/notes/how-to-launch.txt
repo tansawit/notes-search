@@ -1,6 +1,5 @@
 How to Launch
 
-*** START OF NOTE ***
   Launching isn’t one moment in time.
 
 Notes from Kat Mañalac’s talk as part of Y Combinator’s Startup School
@@ -95,4 +94,3 @@ email list, and send them updates on what you’re doing in (semi) regular
 intervals. Once a ‘piece’ comes out about your product (e.g. on
 TechCrunch), send it to the list and ask for their help for spreading
 the news.
-*** END OF NOTE ***

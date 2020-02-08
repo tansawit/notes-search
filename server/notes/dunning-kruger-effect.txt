@@ -1,7 +1,4 @@
 Dunning-Kruger Effect
 
-*** START OF NOTE ***
-
 A cognitive bias in which people assess their cognitive ability as
 greater than it is.
-*** END OF NOTE ***

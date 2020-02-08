@@ -1,7 +1,5 @@
 Agile Best Practices
 
-*** START OF NOTE ***
-
 Sprint Planning
 
 How to ensure team has selected a group of stories to ensure delivering
@@ -139,4 +137,3 @@ For each test written ask yourself
 -   What is the expected output?
 -   What is the expected output?
 -   What should the feature do?
-*** END OF NOTE ***

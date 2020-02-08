@@ -1,6 +1,5 @@
 The Scrum Guide
 
-*** START OF NOTE ***
 Introduction
 
 Scum is a framework within which you can employ various processes and
@@ -228,4 +227,3 @@ If a Sprint is cancelled:
     the Product Backlog
 -   The work done on them depreciates quickly and must be frequently
     re-estimated
-*** END OF NOTE ***

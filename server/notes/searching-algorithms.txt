@@ -1,6 +1,5 @@
 Searching
 
-*** START OF NOTE ***
 Linear Search
 
 Introduction
@@ -67,4 +66,3 @@ Implementation
             return -1
 
 Time Complexity
-*** END OF NOTE ***

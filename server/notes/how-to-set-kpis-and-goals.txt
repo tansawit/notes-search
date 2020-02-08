@@ -1,7 +1,5 @@
 How to Set KPIs and Goals
 
-*** START OF NOTE ***
-
   The goal of your startup is to grow your primary metrics
 
 Notes from Adora Cheung’s talk as part of Y Combinator’s Startup School
@@ -150,4 +148,3 @@ Benefits of Primary Metrics and Goals:
 
 Always asking yourself: what’s the biggest obstacle in my way of hitting
 my goals and how do I overcome it
-*** END OF NOTE ***
