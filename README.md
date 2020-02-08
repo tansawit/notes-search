@@ -65,3 +65,12 @@ Content
 Misc.
 
 - Code Comments/Cleanup
+
+## Future Plans
+
+- Create and API route to add notes into index and make it into another product/service to make it easier to add bits of info.
+- Use backend API to create an Alfred workflow for easy searching
+
+## Stupid Future Plans
+
+- Desktop/Mobile App based on the backend API?
