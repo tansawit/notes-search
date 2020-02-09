@@ -53,7 +53,8 @@ func esSearchContent(searchKey string) interface{} {
 		  "query": {
 			"match": {
 		      "text": {
-		        "query": ".*%s.*",
+		        "query": "%s",
+				"fuzziness": "AUTO",
 		        "operator": "and",
 		        "zero_terms_query": "all"
 		      }
